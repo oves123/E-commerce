@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>{{ product.name }} Details</title> -->
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <img src="{{ product.image.url }}" alt="{{ product.name }}" width="400">
+    <p><strong>Price:</strong> ${{ product.price }}</p>
+    <p><strong>Description:</strong> {{ product.description }}</p>
+    <p><strong>Shipping Charge:</strong> ${{ product.shipping_charge }}</p>
+    <p><strong>Return Policy:</strong> {{ product.return_policy }}</p>
+    <p><strong>Watch Type:</strong> {{ product.watch_type }}</p>
+    <p><strong>Delivery Time:</strong> {{ product.delivery_time }}</p>
+    <h1>{{ product1.name }}</h1>
+    <img src="{{ product1.image.url }}" alt="{{ product.name }}" width="400">
+    <p><strong>Price:</strong> ${{ product1.price }}</p>
+    <p><strong>Description:</strong> {{ product1.description }}</p>
+    <p><strong>Shipping Charge:</strong> ${{ product1.shipping_charge }}</p>
+    <p><strong>Return Policy:</strong> {{ product1.return_policy }}</p>
+    <p><strong>Watch Type:</strong> {{ product1.watch_type }}</p>
+    <p><strong>Delivery Time:</strong> {{ product1.delivery_time }}</p>
+</body>
+</html>

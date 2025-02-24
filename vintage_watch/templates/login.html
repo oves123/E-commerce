@@ -1,0 +1,136 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Watches</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="{% url 'index' %}"><span style="color:rgb(143, 143, 143);">Vintage</span><span style="color:blue;">s</span><span style="color:yellow;">h</span><span style="color:green;">o</span><span style="color:rgb(255, 123, 0);">p</span></a></div>
+        <div class="search-container">
+            <input type="text" class="search-bar1" placeholder="Search for anything">
+            <button class="search-button1">Search🔍</button>
+            <div class="link">
+                <a href="{% url 'index' %}" class="home" title="home page">Back to home</a>
+            </div>
+        </div>
+    </div>
+
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+            <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <div class="login-container">
+        <h2>Login to Your Account</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" name="username" id="username" placeholder="enter username" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <div class="password-container">
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                    <span id="togglePassword">👁</span>
+                </div>
+            </div>
+
+            <div class="remember-forgot">
+                <label><input type="checkbox" name="remember"> Remember me</label>
+                <a href="{% url 'forgot' %}">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="login-btn">Login</button>
+
+            <p class="signup-link">Don't have an account? <a href="{% url 'sign' %}">Sign Up</a></p>
+        </form>
+    </div>
+
+    
+
+
+
+    <footer class="footer">
+        <!-- About Us -->
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>We provide high-quality products at affordable prices. Shop with us for a seamless experience!</p>
+        </div>
+    
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Mens Watches</a></li>
+                <li><a href="#">Womens Watches</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    
+        <!-- Customer Service -->
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+    
+        <!-- Social Media -->
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" title="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook" style="color: rgb(92, 92, 255);"></i></a>
+                <a href="https://www.x.com/" title="https://www.x.com/" target="_blank"><i class="fa-brands fa-square-x-twitter" style="color: rgb(128, 128, 128);"></i></a>
+                <a href="https://www.instagram.com/" title="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" style="color: #ce9999;"></i></i></a>
+                <a href="https://www.youtube.com/" title="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i></a>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Copyright Section -->
+    <div class="copyright">
+        © 2025 YourCompany. All Rights Reserved.
+    </div>
+
+    <script>
+        // Toggle password visibility
+        document.getElementById("togglePassword").addEventListener("click", function() {
+            let passwordField = document.getElementById("password");
+            if (passwordField.type === "password") {
+                passwordField.type = "text";
+                this.textContent = "🙈";
+            } else {
+                passwordField.type = "password";
+                this.textContent = "👁";
+            }
+        });
+        setTimeout(function() {
+        let messages = document.querySelectorAll(".messages li");
+        messages.forEach((msg) => {
+            msg.style.display = "none";
+        });
+    }, 3000);
+        setTimeout(function() {
+            var messageContainer = document.getElementById('message-container');
+            if (messageContainer) {
+                messageContainer.style.display = 'none';
+            }
+        }, 3000); // Message disappears after 3 seconds
+    </script>
+</body>
+</html>

@@ -1,0 +1,358 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo {
+    font-size: 44px;
+    font-weight: bold;
+    color: black;
+}
+
+.logo span {
+    color: red;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    flex-grow: 1;
+}
+
+.search-bar1 {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+.search-button1 {
+    margin-left: 5px;
+    padding: 10px 15px;
+    background-color: #0066cc;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.search-button1:hover {
+    background-color: #005bb5;
+}
+.link{
+    margin-left: 30px;
+}
+
+.link a{
+    text-decoration: none;
+font-weight: 700;
+font-size: 18px;
+}
+
+.home{
+    margin-left: 30px;
+}
+
+
+/* footer */
+.footer {
+    background-color: #222;
+    color: white;
+    padding: 40px 10%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-column {
+    width: 25%;
+    min-width: 200px;
+}
+
+.footer-column h3 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    border-bottom: 2px solid #ffcc00;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin: 8px 0;
+}
+
+.footer-column ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.footer-column ul li a:hover {
+    color: #ffcc00;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ffcc00;
+}
+
+.copyright {
+    text-align: center;
+    background: #111;
+    color: white;
+    padding: 10px;
+    font-size: 14px;
+}
+
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px;
+    gap: 40px;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 1;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info ul li {
+    margin-bottom: 10px;
+}
+
+/* Contact Form */
+.contact-form {
+    flex: 1;
+    max-width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form h2 {
+    margin-bottom: 15px;
+    color: #007bff;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    height: 100px;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3;
+}
+
+/* Google Map */
+.map {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.map h2 {
+    color: #007bff;
+}
+
+.map iframe {
+    width: 90%;
+    max-width: 800px;
+    height: 300px;
+    border: none;
+    margin-top: 10px;
+}
+
+
+
+/* Login Container */
+.login-container {
+    margin-top: 20px;
+    margin-left: 35%;
+    margin-bottom: 30px;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Input Groups */
+.input-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Password Visibility Toggle */
+.password-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.password-container input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+#togglePassword {
+    cursor: pointer;
+    padding: 5px;
+}
+
+/* Remember Me & Forgot Password */
+.remember-forgot {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.remember-forgot a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Login Button */
+.login-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Sign Up Link */
+.signup-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.signup-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+.messages {
+    list-style: none;
+    padding: 10px;
+}
+.success {
+    text-align: center;
+    color: green;
+    background: #d4edda;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.error {
+    text-align: center;
+    color: red;
+    background: #f8d7da;
+    padding: 10px;
+    border-radius: 5px;
+}

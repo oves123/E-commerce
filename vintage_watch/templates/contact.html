@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Watches</title>
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo"><a href="{% url 'index' %}"><span style="color:rgb(143, 143, 143);">Vintage</span><span style="color:blue;">s</span><span style="color:yellow;">h</span><span style="color:green;">o</span><span style="color:rgb(255, 123, 0);">p</span></a></div>
+        <div class="search-container">
+            <input type="text" class="search-bar1" placeholder="Search for anything">
+            <button class="search-button1">Search🔍</button>
+            <div class="link">
+                <a href="{% url 'index' %}" class="home" title="home page">Back to home</a>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>Have questions? We'd love to hear from you!</p>
+            <ul>
+                <li><strong>📍 Address:</strong> 123 Street, City, Country</li>
+                <li><strong>📧 Email:</strong> support@ecommerce.com</li>
+                <li><strong>📞 Phone:</strong> +1 234 567 890</li>
+                <li><strong>⏰ Hours:</strong> Mon-Fri: 9 AM - 6 PM</li>
+            </ul>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form action="submit_form.php" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="map">
+        <h2>Find Us</h2>
+        <iframe src="https://maps.google.com/maps?q=New York&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+    </section>
+
+
+<!-- Footer Section -->
+<footer class="footer">
+    <!-- About Us -->
+    <div class="footer-column">
+        <h3>About Us</h3>
+        <p>We provide high-quality products at affordable prices. Shop with us for a seamless experience!</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Mens Watches</a></li>
+            <li><a href="#">Womens Watches</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- Customer Service -->
+    <div class="footer-column">
+        <h3>Customer Service</h3>
+        <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Shipping Policy</a></li>
+            <li><a href="#">Return Policy</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+        </ul>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-column">
+        <h3>Follow Us</h3>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/" title="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook" style="color: rgb(92, 92, 255);"></i></a>
+            <a href="https://www.x.com/" title="https://www.x.com/" target="_blank"><i class="fa-brands fa-square-x-twitter" style="color: rgb(128, 128, 128);"></i></a>
+            <a href="https://www.instagram.com/" title="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" style="color: #ce9999;"></i></i></a>
+            <a href="https://www.youtube.com/" title="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i></a>
+        </div>
+    </div>
+</footer>
+
+<!-- Copyright Section -->
+<div class="copyright">
+    © 2025 YourCompany. All Rights Reserved.
+</div>
+</body>
+</html>

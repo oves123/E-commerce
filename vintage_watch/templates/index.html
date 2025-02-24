@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Watches</title>
+    <link rel="stylesheet" href="static/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+    <form action="" method="get">
+    <div class="navbar">
+        <div class="logo"><a href="{% url 'index' %}"><span style="color:rgb(143, 143, 143);">Watch</span><span style="color:blue;">s</span><span style="color:yellow;">h</span><span style="color:green;">o</span><span style="color:rgb(255, 123, 0);">p</span></a></div>
+        
+        <div class="search-container">
+            
+                <input type="text" class="search-bar1" placeholder="Search for anything" name="search">
+                <button class="search-button1">Search🔍</button>
+            
+            <select class="category-dropdown1" id="redirectDropdown">
+                <option value="{% url 'index' %}">All Categories</option>
+                <option value="{% url 'men_watch' %}">Mens Vintage Watch</option>
+                <option value="{% url 'women_watch' %}">Womens Vintage Watch</option>
+                <option value="{% url 'contact' %}">Contact Us</option>
+            </select>
+        </div>
+    
+        <div>
+          <p class="login_d">H! <a href="{% url 'login' %}">{{ username  }}  login</a> Or <a href="{% url 'sign' %}">register</a></p>
+          <div class="sell"><a href="{% url 'selling' %}" target="_blank">sell</a></div>
+        </div>
+    </div>
+</form>
+    <!-- search query data -->
+    {% if products_s %}
+        <h3>Search Results for "{{ query }}"</h3>
+    {% for product in products_s %}
+    <div class="container">
+        <div class="cart">
+        <a href="{% url 'pro_d' product.id %}" title="details"><img src="{{ product.image.url }}" alt="Citizen Men's Watch"></a>
+        <h2>Watch name:- {{ product.name }}</h2>
+        <p class="description_p">Description:- {{ product.description }}</p>
+        <h2>Retun eccepted:- {{ product.return_policy }}</h2>
+        <h2>Type:- {{ product.watch_type }}</h2>
+        <p class="price">Price:- ${{ product.price }}</p>
+        <button>Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+    {% else %}
+        <p>No products found for "{{ query }}".</p>
+    {% endif %}
+
+
+
+    {% if messages %}
+    <div id="message-container">
+        {% for message in messages %}
+            <p style="color: green;background-color: aqua; text-align: center;">{{ message }}</p>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% for data in data %}
+    <div class="container">
+        <div class="cart">
+        <a href="{% url 'pro_d' data.id %}" title="details"><img src="{{ data.image.url }}" alt="Citizen Men's Watch"></a>
+        <h2>Watch name:- {{ data.name }}</h2>
+        <p class="description_p">Description:- {{ data.description }}</p>
+        <h2>Retun eccepted:- {{ data.return_policy }}</h2>
+        <h2>Type:- {{ data.watch_type }}</h2>
+        <p class="price">Price:- ${{ data.price }}</p>
+        <button>Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+
+    <!-- seller_details -->
+    {% if seller_details %}
+    {% for data in seller_details %}
+    <div class="container">
+        <div class="cart">
+        <a href="{% url 'pro_d' data.id %}" title="details"><img src="{{ data.image.url }}" alt="Citizen Men's Watch"></a>
+        <h2>Watch name:- {{ data.name }}</h2>
+        <p class="description_p">Description:- {{ data.description }}</p>
+        <h2>Retun eccepted:- {{ data.return_policy }}</h2>
+        <h2>Type:- {{ data.watch_type }}</h2>
+        <p class="price">Price:- ${{ data.price }}</p>
+        <button>Add to Cart</button>
+        </div>
+    </div>
+    {% endfor %}
+    {% endif %}
+    <div>
+        <hr class="hr_class">
+        <div class="left">
+            Vintage Watch History
+        </div>
+
+        <!-- Right Side - Detailed History -->
+        <div class="right">
+            <h2>Peter Henlein
+                Locksmithing and clockmaker
+                </h2>
+            <p>Peter Henlein (also spelled Henle or Hele)[1] (1485 - August 1542), a locksmith, clockmaker, and watchmaker of Nuremberg, Germany. Due to the Fire-gilded pomander-shaped watch from 1505, he is often considered the inventor of the pocket watch.[2][3] He was one of the first craftsmen to make small ornamental portable clocks which were often worn as pendants or attached to clothing,[4] and which are regarded as the first watches. Many sources also erroneously credit him as the inventor of the mainspring.</p>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <!-- About Us -->
+        <div class="footer-column">
+            <h3>About Us</h3>
+            <p>We provide high-quality products at affordable prices. Shop with us for a seamless experience!</p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-column">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li><a href="{% url 'men_watch' %}">Mens Watches</a></li>
+                <li><a href="{% url 'women_watch' %}">Womens Watches</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Customer Service -->
+        <div class="footer-column">
+            <h3>Customer Service</h3>
+            <ul>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Shipping Policy</a></li>
+                <li><a href="#">Return Policy</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+            </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" title="https://www.facebook.com" target="_blank"><i class="fa-brands fa-facebook" style="color: rgb(92, 92, 255);"></i></a>
+                <a href="https://www.x.com/" title="https://www.x.com/" target="_blank"><i class="fa-brands fa-square-x-twitter" style="color: rgb(128, 128, 128);"></i></a>
+                <a href="https://www.instagram.com/" title="https://www.instagram.com/" target="_blank"><i class="fa-brands fa-instagram" style="color: #ce9999;"></i></i></a>
+                <a href="https://www.youtube.com/" title="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube" style="color: #ff0000;"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Copyright Section -->
+    <div class="copyright">
+        © 2025 YourCompany. All Rights Reserved.
+    </div>
+    
+
+
+
+
+
+
+    <script>
+    document.getElementById('redirectDropdown').addEventListener('change', function() {
+        let selectedValue = this.value;
+        if (selectedValue) {
+            window.open(selectedValue, '_blank');
+        }
+        else{
+            alert("Page not found")
+        }
+    });
+
+        setTimeout(function() {
+            var messageContainer = document.getElementById('message-container');
+            if (messageContainer) {
+                messageContainer.style.display = 'none';
+            }
+        }, 3000); // Message disappears after 3 seconds
+    
+</script>
+</body>
+</html>
